@@ -14,26 +14,7 @@ return
         -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
         -- - sd'   - [S]urround [D]elete [']quotes
         -- - sr)'  - [S]urround [R]eplace [)] [']
-        require('mini.surround').setup({
-            custom_surroundings = {
-                s = { left = '<mark class="hltr-red">', right = '</mark>' },
-                mG = { left = '<mark class="hltr-green">', right = '</mark>' },
-                mB = { left = '<mark class="hltr-blue">', right = '</mark>' },
-            }
-        })
-        local hipatterns = require('mini.hipatterns')
-        hipatterns.setup({
-            highlighters = {
-                -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
-                fixme     = { pattern = '%f[%w]()fixme()%f[%w]', group = 'minihipatternsfixme' },
-                hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
-                todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
-                note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
-
-                -- Highlight hex color strings (`#rrggbb`) using that color
-                hex_color = hipatterns.gen_highlighter.hex_color(),
-            },
-        })
+        require('mini.surround').setup()
         require('mini.comment').setup()
         require('mini.pairs').setup()
         require('mini.git').setup()

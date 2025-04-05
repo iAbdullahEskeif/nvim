@@ -71,3 +71,11 @@ vim.api.nvim_create_autocmd("BufReadCmd", {
         vim.cmd("let tobedeleted = bufnr('%') | b# | exe \"bd! \" . tobedeleted")
     end
 })
+vim.keymap.set('n', '<leader>d', function()
+    local note_path = "/home/aboud/Dropbox/notes/" .. os.date("%Y-%m-%d") .. ".md"
+    if vim.fn.filereadable(note_path) == 1 then
+        vim.cmd("edit " .. vim.fn.fnameescape(note_path))
+    else
+        print("Daily note does not exist!")
+    end
+end, { noremap = true, silent = true })
