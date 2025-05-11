@@ -23,7 +23,7 @@ return {
         workspaces = {
             {
                 name = "notes",
-                path = "~/Dropbox/notes/",
+                path = "~/personal/notes/",
             },
         },
 
